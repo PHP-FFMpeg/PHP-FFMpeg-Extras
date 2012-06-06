@@ -3,6 +3,7 @@
 namespace FFMpeg\Format\Video;
 
 use FFMpeg\Format\Dimension;
+use FFMpeg\Format\Video as BaseVideo;
 use FFMpeg\Format\Video\Resizable;
 use FFMpeg\Format\Video\Transcodable;
 use FFMpeg\Format\Video\Resamplable;
@@ -38,7 +39,7 @@ use FFMpeg\Format\Video\Resamplable;
  * Audio Frequency/Sampling rate for 3GP:
  * 8000, 11025(low), 12000, 16000, 22050, 24000, 32000, 44100(normal), 48000(high).
  */
-class ThreeGP implements Video, Resizable, Transcodable, Resamplable
+class ThreeGP implements BaseVideo, Resizable, Transcodable, Resamplable
 {
     /**
      * Width of the video
