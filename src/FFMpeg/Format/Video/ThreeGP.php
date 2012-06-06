@@ -90,6 +90,8 @@ class ThreeGP implements Video, Resizable, Transcodable, Resamplable
     public function setWidth($width)
     {
         $this->width = $width;
+        
+        return $this;
     }
 
     public function getHeight()
@@ -100,6 +102,8 @@ class ThreeGP implements Video, Resizable, Transcodable, Resamplable
     public function setHeight($height)
     {
         $this->height = $height;
+
+        return $this;
     }
 
     public function getKiloBitrate()
