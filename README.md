@@ -1,11 +1,11 @@
 PHP-FFMPEG-Extras
 =================
 
-
 PHP-FFMPEG-Extras is a repository where the most common video & audio
-formats for https://github.com/alchemy-fr/PHP-FFmpeg are available.
+formats for (PHP-FFmpeg)[https://github.com/alchemy-fr/PHP-FFmpeg] are available.
 
-Done : 3GP.
+Available formats are :
+ - 3GP.
 
 Todo :
 
@@ -19,3 +19,7 @@ Todo :
 - Audio
     - OGG
     - WAV
+
+#License
+
+This project is released under the MIT License
