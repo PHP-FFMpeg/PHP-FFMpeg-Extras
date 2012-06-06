@@ -19,7 +19,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getWidth
-     * @todo Implement testGetWidth().
      */
     public function testGetWidth()
     {
@@ -28,7 +27,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::setWidth
-     * @todo Implement testSetWidth().
      */
     public function testSetWidth()
     {
@@ -38,7 +36,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getHeight
-     * @todo Implement testGetHeight().
      */
     public function testGetHeight()
     {
@@ -47,7 +44,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::setHeight
-     * @todo Implement testSetHeight().
      */
     public function testSetHeight()
     {
@@ -57,7 +53,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getKiloBitrate
-     * @todo Implement testGetKiloBitrate().
      */
     public function testGetKiloBitrate()
     {
@@ -66,7 +61,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getExtraParams
-     * @todo Implement testGetExtraParams().
      */
     public function testGetExtraParams()
     {
@@ -75,7 +69,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getAudioSampleRate
-     * @todo Implement testGetAudioSampleRate().
      */
     public function testGetAudioSampleRate()
     {
@@ -84,7 +77,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getComputedDimensions
-     * @todo Implement testGetComputedDimensions().
      */
     public function testGetComputedDimensions()
     {
@@ -98,7 +90,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getVideoCodec
-     * @todo Implement testGetVideoCodec().
      */
     public function testGetVideoCodec()
     {
@@ -107,7 +98,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getAudioCodec
-     * @todo Implement testGetAudioCodec().
      */
     public function testGetAudioCodec()
     {
@@ -116,7 +106,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getAvailableVideoCodecs
-     * @todo Implement testGetAvailableVideoCodecs().
      */
     public function testGetAvailableVideoCodecs()
     {
@@ -130,7 +119,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getAvailableAudioCodecs
-     * @todo Implement testGetAvailableAudioCodecs().
      */
     public function testGetAvailableAudioCodecs()
     {
@@ -144,7 +132,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getFrameRate
-     * @todo Implement testGetFrameRate().
      */
     public function testGetFrameRate()
     {
@@ -153,7 +140,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::setKiloBitrate
-     * @todo Implement testSetKiloBitrate().
      */
     public function testSetKiloBitrate()
     {
@@ -164,7 +150,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::setAudioSampleRate
-     * @todo Implement testSetAudioSampleRate().
      */
     public function testSetAudioSampleRate()
     {
@@ -175,7 +160,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::setFrameRate
-     * @todo Implement testSetFrameRate().
      */
     public function testSetFrameRate()
     {
@@ -186,7 +170,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::setVideoCodec
-     * @todo Implement testSetVideoCodec().
      */
     public function testSetVideoCodec()
     {
@@ -197,7 +180,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::setAudioCodec
-     * @todo Implement testSetAudioCodec().
      */
     public function testSetAudioCodec()
     {
@@ -208,7 +190,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getGOPSize
-     * @todo Implement testGetGOPSize().
      */
     public function testGetGOPSize()
     {
@@ -217,7 +198,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::supportBFrames
-     * @todo Implement testSupportBFrames().
      */
     public function testSupportBFrames()
     {
