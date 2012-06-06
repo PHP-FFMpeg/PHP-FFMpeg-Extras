@@ -1,0 +1,22 @@
+{
+    "name": "php-ffmpeg-extra/php-ffmpeg-extra",
+    "type": "class repository",
+    "description": "FFMpeg PHP, a php-ffmpeg format class repository",
+    "keywords": ["video processing", "video", "audio processing", "audio", "avconv", "ffmpeg", "avprobe", "ffprobe"],
+    "license": "MIT",
+    "authors": [
+    {
+        "name": "Phraseanet Team",
+        "email": "info@alchemy.fr",
+        "homepage": "http://www.phraseanet.com/"
+    }
+    ],
+    "require": {
+        "php": ">=5.3.2"
+    },
+    "autoload": {
+        "psr-0": {
+            "FFMpeg": "src"
+        }
+    }
+}
