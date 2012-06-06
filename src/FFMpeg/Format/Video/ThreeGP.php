@@ -91,7 +91,7 @@ class ThreeGP implements BaseVideo, Resizable, Transcodable, Resamplable
     public function setWidth($width)
     {
         $this->width = $width;
-        
+
         return $this;
     }
 
@@ -139,7 +139,7 @@ class ThreeGP implements BaseVideo, Resizable, Transcodable, Resamplable
 
     public function getAvailableVideoCodecs()
     {
-        return array('h263', 'h264');
+        return array('h263', 'libx264');
     }
 
     public function getAvailableAudioCodecs()
@@ -175,18 +175,25 @@ class ThreeGP implements BaseVideo, Resizable, Transcodable, Resamplable
 
     public function setVideoCodec($videoCodec)
     {
-        if (in_array($videoCodec, $this->getAvailableVideoCodecs())) {
-            $this->videoCodec = $videoCodec;
+        if ( ! in_array($videoCodec, $this->getAvailableVideoCodecs())) {
+            throw new \FFMpeg\Exception\InvalidArgumentException(sprintf('Invalid argument `%s` for video codec ; available codecs are %s', $videoCodec, implode(' ,', $this->getAvailableVideoCodecs())));
         }
+
+        $this->videoCodec = $videoCodec;
 
         return $this;
     }
 
     public function setAudioCodec($audioCodec)
     {
-        if (in_array($audioCodec, $this->getAudioCodec())) {
-            $this->audioCodec = $audioCodec;
+        if (in_array($audioCodec, $this->getAvailableAudioCodecs())) {
+            throw new \FFMpeg\Exception\InvalidArgumentException(
+                sprintf(
+                    'Invalid argument `%s` for video codec ; available codecs are %s', $audioCodec, implode(' ,', $this->getAvailableAudioCodecs()))
+            );
         }
+
+        $this->audioCodec = $audioCodec;
 
         return $this;
     }

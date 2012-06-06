@@ -2,8 +2,20 @@
 
 namespace FFMpeg\Format\Video;
 
+use FFMpeg\Format\Video\ThreeGP;
+
 class ThreeGPTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     *
+     * @var ThreeGP
+     */
+    protected $format;
+
+    protected function setUp()
+    {
+        $this->format = new ThreeGP();
+    }
 
     /**
      * @covers FFMpeg\Format\Video\ThreeGP::getWidth
@@ -11,10 +23,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetWidth()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertEquals(176, $this->format->getWidth());
     }
 
     /**
@@ -23,10 +32,8 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetWidth()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->format->setWidth(1024);
+        $this->assertEquals(1024, $this->format->getWidth());
     }
 
     /**
@@ -35,10 +42,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetHeight()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertEquals(144, $this->format->getHeight());
     }
 
     /**
@@ -47,10 +51,8 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetHeight()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->format->setheight(768);
+        $this->assertEquals(768, $this->format->getHeight());
     }
 
     /**
@@ -59,10 +61,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetKiloBitrate()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertEquals(240, $this->format->getKiloBitrate());
     }
 
     /**
@@ -71,10 +70,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetExtraParams()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertEquals('-f 3gp', $this->format->getExtraParams());
     }
 
     /**
@@ -83,10 +79,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAudioSampleRate()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertEquals(8000, $this->format->getAudioSampleRate());
     }
 
     /**
@@ -95,10 +88,12 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetComputedDimensions()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $dimension = $this->format->getComputedDimensions(1024, 768);
+
+        $this->assertInstanceOf('FFMpeg\Format\Dimension', $dimension);
+
+        $this->assertEquals(176, $dimension->getWidth());
+        $this->assertEquals(144, $dimension->getHeight());
     }
 
     /**
@@ -107,10 +102,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetVideoCodec()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertEquals('h263', $this->format->getVideoCodec());
     }
 
     /**
@@ -119,10 +111,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAudioCodec()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertEquals('aac', $this->format->getAudioCodec());
     }
 
     /**
@@ -131,10 +120,12 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAvailableVideoCodecs()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $codecs = $this->format->getAvailableVideoCodecs();
+
+        $this->assertTrue(is_array($codecs));
+
+        $this->assertContains('h263', $codecs);
+        $this->assertContains('libx264', $codecs);
     }
 
     /**
@@ -143,10 +134,12 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAvailableAudioCodecs()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $codecs = $this->format->getAvailableAudioCodecs();
+
+        $this->assertTrue(is_array($codecs));
+
+        $this->assertContains('aac', $codecs);
+        $this->assertContains('amr', $codecs);
     }
 
     /**
@@ -155,10 +148,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetFrameRate()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertEquals(12, $this->format->getFrameRate());
     }
 
     /**
@@ -167,10 +157,9 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetKiloBitrate()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->format->setKiloBitrate(768);
+
+        $this->assertEquals(768, $this->format->getKiloBitrate());
     }
 
     /**
@@ -179,10 +168,9 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetAudioSampleRate()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->format->setAudioSampleRate(44100);
+
+        $this->assertEquals(44100, $this->format->getAudioSampleRate());
     }
 
     /**
@@ -191,10 +179,9 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetFrameRate()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->format->setFrameRate(25);
+
+        $this->assertEquals(25, $this->format->getFrameRate());
     }
 
     /**
@@ -203,10 +190,9 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetVideoCodec()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+       $this->format->setVideoCodec('libx264');
+
+       $this->assertEquals('libx264', $this->format->getVideoCodec());
     }
 
     /**
@@ -215,10 +201,9 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetAudioCodec()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->format->setAudioCodec('amr');
+
+        $this->assertEquals('amr', $this->format->getAudioCodec());
     }
 
     /**
@@ -227,10 +212,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetGOPSize()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertEquals(0, $this->format->getGOPSize());
     }
 
     /**
@@ -239,9 +221,6 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testSupportBFrames()
     {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertFalse($this->format->supportBFrames());
     }
 }
