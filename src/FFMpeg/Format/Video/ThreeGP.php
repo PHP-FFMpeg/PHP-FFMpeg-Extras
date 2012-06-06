@@ -176,7 +176,10 @@ class ThreeGP implements BaseVideo, Resizable, Transcodable, Resamplable
     public function setVideoCodec($videoCodec)
     {
         if ( ! in_array($videoCodec, $this->getAvailableVideoCodecs())) {
-            throw new \FFMpeg\Exception\InvalidArgumentException(sprintf('Invalid argument `%s` for video codec ; available codecs are %s', $videoCodec, implode(' ,', $this->getAvailableVideoCodecs())));
+            throw new \FFMpeg\Exception\InvalidArgumentException(
+                sprintf(
+                    'Invalid argument `%s` for video codec ; available codecs are %s', $videoCodec, implode(' ,', $this->getAvailableVideoCodecs()))
+            );
         }
 
         $this->videoCodec = $videoCodec;
