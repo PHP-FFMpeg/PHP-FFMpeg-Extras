@@ -189,7 +189,7 @@ class ThreeGP implements BaseVideo, Resizable, Transcodable, Resamplable
 
     public function setAudioCodec($audioCodec)
     {
-        if (in_array($audioCodec, $this->getAvailableAudioCodecs())) {
+        if ( ! in_array($audioCodec, $this->getAvailableAudioCodecs())) {
             throw new \FFMpeg\Exception\InvalidArgumentException(
                 sprintf(
                     'Invalid argument `%s` for video codec ; available codecs are %s', $audioCodec, implode(' ,', $this->getAvailableAudioCodecs()))

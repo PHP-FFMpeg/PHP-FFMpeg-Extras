@@ -173,9 +173,9 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetVideoCodec()
     {
-       $this->format->setVideoCodec('libx264');
+        $this->format->setVideoCodec('libx264');
 
-       $this->assertEquals('libx264', $this->format->getVideoCodec());
+        $this->assertEquals('libx264', $this->format->getVideoCodec());
     }
 
     /**
@@ -186,6 +186,24 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
         $this->format->setAudioCodec('amr');
 
         $this->assertEquals('amr', $this->format->getAudioCodec());
+    }
+
+    /**
+     * @covers FFMpeg\Format\Video\ThreeGP::setVideoCodec
+     * @expectedException \FFMpeg\Exception\InvalidArgumentException
+     */
+    public function testSetVideoCodecException()
+    {
+        $this->format->setVideoCodec('unknow');
+    }
+
+    /**
+     * @covers FFMpeg\Format\Video\ThreeGP::setAudioCodec
+     * @expectedException \FFMpeg\Exception\InvalidArgumentException
+     */
+    public function testSetAudioCodecException()
+    {
+        $this->format->setAudioCodec('unknow');
     }
 
     /**

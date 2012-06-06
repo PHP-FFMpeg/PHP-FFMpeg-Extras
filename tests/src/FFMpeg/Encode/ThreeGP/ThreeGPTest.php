@@ -62,7 +62,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
     {
         $format = new ThreeGP();
 
-        $format->setVideoCodec('h264');
+        $format->setVideoCodec('libx264');
         $format->setAudioCodec('amr');
 
         try {
