@@ -1,8 +1,8 @@
 {
-    "name": "php-ffmpeg-extra/php-ffmpeg-extra",
-    "type": "class repository",
-    "description": "FFMpeg PHP, a php-ffmpeg format class repository",
-    "keywords": ["video processing", "video", "audio processing", "audio", "avconv", "ffmpeg", "avprobe", "ffprobe"],
+    "name": "php-ffmpeg/extra",
+    "type": "library",
+    "description": "A set of audio/video formats compatible with PHP-FFMpeg",
+    "keywords": ["ffmpeg", "codecs"],
     "license": "MIT",
     "authors": [
     {
@@ -12,7 +12,11 @@
     }
     ],
     "require": {
-        "php": ">=5.3.2"
+        "php": ">=5.3.2",
+        "php-ffmpeg/php-ffmpeg": "*"
+    },    
+    "require-dev": {
+	"sami/sami": "dev-master"
     },
     "autoload": {
         "psr-0": {
