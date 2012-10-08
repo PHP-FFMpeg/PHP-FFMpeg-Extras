@@ -114,7 +114,7 @@ class ThreeGP implements BaseVideo, Resizable, Transcodable, Resamplable
 
     public function getExtraParams()
     {
-        return '-f 3gp';
+        return array('-f', '3gp');
     }
 
     public function getAudioSampleRate()
