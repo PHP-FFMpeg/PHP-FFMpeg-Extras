@@ -1,5 +1,5 @@
 {
-    "name": "php-ffmpeg/extra",
+    "name": "php-ffmpeg/extras",
     "type": "library",
     "description": "A set of audio/video formats compatible with PHP-FFMpeg",
     "keywords": ["ffmpeg", "codecs"],
