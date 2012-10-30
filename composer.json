@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.3.2",
-        "php-ffmpeg/php-ffmpeg": "dev-master"
+        "php-ffmpeg/php-ffmpeg": "0.1.*"
     },
     "require-dev": {
 	"sami/sami": "dev-master"
