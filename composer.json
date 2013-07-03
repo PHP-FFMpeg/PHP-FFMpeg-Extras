@@ -5,25 +5,25 @@
     "keywords": ["ffmpeg", "codecs"],
     "license": "MIT",
     "authors": [
-    {
-        "name": "Phraseanet Team",
-        "email": "info@alchemy.fr",
-        "homepage": "http://www.phraseanet.com/"
-    }
+        {
+            "name": "Phraseanet Team",
+            "email": "dev.team@alchemy.fr",
+            "homepage": "http://www.phraseanet.com/"
+        }
     ],
     "require": {
         "php": ">=5.3.2",
-        "php-ffmpeg/php-ffmpeg": "0.2.*"
+        "php-ffmpeg/php-ffmpeg" : "~0.2.0"
     },
     "require-dev": {
-	"sami/sami": "dev-master"
+        "sami/sami"             : "~1.0",
+        "phpunit/phpunit"       : "~3.7"
     },
     "autoload": {
         "psr-0": {
             "FFMpeg": "src"
         }
     },
-    "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
             "dev-master": "0.2.x-dev"
