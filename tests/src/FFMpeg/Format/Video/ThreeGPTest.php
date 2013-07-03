@@ -64,7 +64,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetExtraParams()
     {
-        $this->assertEquals('-f 3gp', $this->format->getExtraParams());
+        $this->assertEquals(array('-f', '3gp'), $this->format->getExtraParams());
     }
 
     /**
