@@ -3,10 +3,8 @@
 namespace FFMpeg\Encode\ThreeGP;
 
 use FFMpeg\Format\Video\ThreeGP;
-use Monolog\Logger;
-use Monolog\Handler\NullHandler;
+use FFMpeg\Coordinate\Dimension;
 use FFMpeg\FFMpeg;
-use FFMpeg\FFProbe;
 
 class ThreeGPTest extends \PHPUnit_Framework_TestCase
 {
@@ -22,19 +20,8 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        // Create a logger
-        $logger = new Logger('ffmpeg');
-
-        $logger->pushHandler(new NullHandler());
-
-        $this->ffmpeg = FFMpeg::load($logger);
-
-        $ffprobe = FFProbe::load($logger);
-
-        $this->ffmpeg->setProber($ffprobe);
-
+        $this->ffmpeg = FFMpeg::create();
         $this->input = __DIR__ . '/../../../../ressources/test.mp4';
-
         $this->output = __DIR__ . '/../../../../output/test.3gp';
     }
 
@@ -49,10 +36,9 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
     public function testEncodeBasic()
     {
         try {
-            $this->ffmpeg
-                ->open($this->input)
-                ->encode(new ThreeGP(), $this->output)
-                ->close();
+            $video = $this->ffmpeg->open($this->input);
+            $video->filters()->resize(new Dimension(128, 96));
+            $video->save(new ThreeGP(), $this->output);
         } catch (\FFMpeg\Exception\Exception $e) {
             $this->fail($e->getMessage());
         }
@@ -68,8 +54,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
         try {
             $this->ffmpeg
                 ->open($this->input)
-                ->encode($format, $this->output)
-                ->close();
+                ->save($format, $this->output);
         } catch (\FFMpeg\Exception\Exception $e) {
             $this->fail($e->getMessage());
         }

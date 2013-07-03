@@ -2,7 +2,7 @@
 
 namespace FFMpeg\Format\Video;
 
-use FFMpeg\Format\Dimension;
+use FFMpeg\Coordinate\Dimension;
 use FFMpeg\Format\Video\DefaultVideo as BaseVideo;
 
 /**
@@ -39,30 +39,6 @@ use FFMpeg\Format\Video\DefaultVideo as BaseVideo;
 class ThreeGP extends BaseVideo
 {
     /**
-     * Width of the video
-     * @var int
-     */
-    protected $width = 176;
-
-    /**
-     * Height of the video
-     * @var int
-     */
-    protected $height = 144;
-
-    /**
-     * Binary flow of the encoded video
-     * @var int
-     */
-    protected $kiloBitrate = 240;
-
-    /**
-     * Audio sample frequency
-     * @var int
-     */
-    protected $audioSampleRate = 8000;
-
-    /**
      * Video codec
      * @var string
      */
@@ -74,54 +50,9 @@ class ThreeGP extends BaseVideo
      */
     protected $audioCodec = 'aac';
 
-    /**
-     * Video frameRate
-     * @var int
-     */
-    protected $frameRate = 12;
-
-    public function getWidth()
-    {
-        return $this->width;
-    }
-
-    public function setWidth($width)
-    {
-        $this->width = $width;
-
-        return $this;
-    }
-
-    public function getHeight()
-    {
-        return $this->height;
-    }
-
-    public function setHeight($height)
-    {
-        $this->height = $height;
-
-        return $this;
-    }
-
-    public function getKiloBitrate()
-    {
-        return $this->kiloBitrate;
-    }
-
     public function getExtraParams()
     {
         return array('-f', '3gp');
-    }
-
-    public function getAudioSampleRate()
-    {
-        return $this->audioSampleRate;
-    }
-
-    public function getComputedDimensions($originalWidth, $originalHeight)
-    {
-        return new Dimension($this->width, $this->height);
     }
 
     public function getVideoCodec()
@@ -142,65 +73,6 @@ class ThreeGP extends BaseVideo
     public function getAvailableAudioCodecs()
     {
         return array('aac', 'amr');
-    }
-
-    public function getFrameRate()
-    {
-        return $this->frameRate;
-    }
-
-    public function setKiloBitrate($kiloBitrate)
-    {
-        $this->kiloBitrate = $kiloBitrate;
-
-        return $this;
-    }
-
-    public function setAudioSampleRate($audioSampleRate)
-    {
-        $this->audioSampleRate = $audioSampleRate;
-
-        return $this;
-    }
-
-    public function setFrameRate($frameRate)
-    {
-        $this->frameRate = $frameRate;
-
-        return $this;
-    }
-
-    public function setVideoCodec($videoCodec)
-    {
-        if ( ! in_array($videoCodec, $this->getAvailableVideoCodecs())) {
-            throw new \FFMpeg\Exception\InvalidArgumentException(
-                sprintf(
-                    'Invalid argument `%s` for video codec ; available codecs are %s', $videoCodec, implode(' ,', $this->getAvailableVideoCodecs()))
-            );
-        }
-
-        $this->videoCodec = $videoCodec;
-
-        return $this;
-    }
-
-    public function setAudioCodec($audioCodec)
-    {
-        if ( ! in_array($audioCodec, $this->getAvailableAudioCodecs())) {
-            throw new \FFMpeg\Exception\InvalidArgumentException(
-                sprintf(
-                    'Invalid argument `%s` for video codec ; available codecs are %s', $audioCodec, implode(' ,', $this->getAvailableAudioCodecs()))
-            );
-        }
-
-        $this->audioCodec = $audioCodec;
-
-        return $this;
-    }
-
-    public function getGOPSize()
-    {
-        return 0;
     }
 
     public function supportBFrames()
