@@ -40,7 +40,7 @@ class ThreeGPTest extends \PHPUnit_Framework_TestCase
 
     protected function tearDown()
     {
-        if(is_file($this->output)) {
+        if (is_file($this->output)) {
             $this->assertGreaterThan(0, filesize($this->output));
             unlink($this->output);
         }
