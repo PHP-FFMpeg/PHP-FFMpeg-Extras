@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "3f5b115e17fb83e7b66d9a17bbdc16dc",
+    "hash": "e8366c9ce6b5f1fa036e05d399b62f54",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -227,16 +227,16 @@
         },
         {
             "name": "php-ffmpeg/php-ffmpeg",
-            "version": "dev-master",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/alchemy-fr/PHP-FFmpeg.git",
-                "reference": "b21e9dbb55ea47aa8d9014cbba642e4726199320"
+                "reference": "0.3.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alchemy-fr/PHP-FFmpeg/zipball/b21e9dbb55ea47aa8d9014cbba642e4726199320",
-                "reference": "b21e9dbb55ea47aa8d9014cbba642e4726199320",
+                "url": "https://api.github.com/repos/alchemy-fr/PHP-FFmpeg/zipball/0.3.0",
+                "reference": "0.3.0",
                 "shasum": ""
             },
             "require": {
@@ -291,7 +291,7 @@
                 "video",
                 "video processing"
             ],
-            "time": "2013-07-03 17:42:24"
+            "time": "2013-07-03 18:53:12"
         },
         {
             "name": "psr/log",
@@ -1126,9 +1126,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "php-ffmpeg/php-ffmpeg": 20
-    },
+    "stability-flags": [
+
+    ],
     "platform": {
         "php": ">=5.3.2"
     },
