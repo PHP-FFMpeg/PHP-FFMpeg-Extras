@@ -1,6 +1,10 @@
 CHANGELOG
 ---------
 
+* 0.3.1 (02-24-2014)
+
+  * Fix composer compatibility with PHP-FFMpeg versions
+
 * 0.3.0 (07-04-2013)
 
   * Update to FFMpeg version 0.3.
