@@ -17,7 +17,6 @@ formats for [PHP-FFMpeg](https://github.com/PHP-FFMpeg/PHP-FFMpeg) are available
 
 - Audio
     - OGG
-    - WAV
 
 ## License
 This project is released under the MIT License
